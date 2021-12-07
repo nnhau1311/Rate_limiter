@@ -1,0 +1,20 @@
+server:
+  port: 9094
+spring:
+  application:
+    name: ratelimiter
+resilience4j.timelimiter:
+  instances:
+    default:
+      timeoutDuration: 2s
+
+resilience4j.ratelimiter:
+  instances:
+    default:
+      limitForPeriod: 2
+      limitRefreshPeriod: 10s
+#      maxWaitDuration: 1000
+
+
+billing:
+  app: This is billing App Reporting Service defaulttest
